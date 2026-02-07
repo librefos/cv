@@ -45,6 +45,8 @@
 rubber.cache
 
 ## Build tool directories for auxiliary files
+# pdflatex
+build/
 # latexrun
 latex.out/
 

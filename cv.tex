@@ -1,0 +1,289 @@
+%--- The MIT License (MIT) ---------------------------------------------
+%
+% Copyright (c) 2019 Jan Küster
+% Copyright (c) 2026 Thiago C Silva
+%
+% Permission is hereby granted, free of charge, to any person obtaining
+% a copy of this software and associated documentation files (the
+% "Software"), to deal in the Software without restriction, including
+% without limitation the rights to use, copy, modify, merge, publish,
+% distribute, sublicense, and/or sell copies of the Software, and to
+% permit persons to whom the Software is furnished to do so, subject to
+% the following conditions:
+%
+% The above copyright notice and this permission notice shall be
+% included in all copies or substantial portions of the Software.
+%
+% THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+% EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+% MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+% IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+% CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+% TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+% SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+%
+%--------------------------------------------- The MIT License (MIT) ---
+
+\documentclass[10pt, a4paper]{article}
+
+\input{preamble}
+
+%--- Header & Footer ---------------------------------------------------
+
+\pagestyle{fancy}
+
+% Clear all default headers/footers
+\fancyhf{}
+
+% Left-aligned footer with contact info
+\fancyfoot[L]{%
+  \iconhref{github}{12}{@librefos}{\github{librefos}}{black} \\[6pt]
+  \iconemail{envelope}{12}{librefos@hotmail.com}{black} \\[6pt]
+  \icontext{map-marker-alt}{12}{Curvelo/MG, Brasil}{black} \\[12pt]
+  \qrcode{\linkedin{librefos}}
+}
+
+\begin{document}
+
+% Indentation at the beginning of each paragraph
+\setlength{\parindent}{0mm}
+
+% Start the two-column layout
+\begin{paracol}{2}
+
+%--------------------------------------------------- Header & Footer ---
+%--- Left Column -------------------------------------------------------
+
+\begin{leftcolumn}
+
+\includegraphics[width=\linewidth]{assets/profile.jpeg}
+
+\cvsection{Competências}
+
+\cvskill{C}               {3+ anos} {1.00}
+\cvskill{Java}            {3+ anos} {1.00}
+\cvskill{PHP}             {3+ anos} {1.00}
+\cvskill{Python}          {2+ anos} {0.75}
+\cvskill{SQL}             {1+ anos} {0.45} \\
+
+\cvskill{GNU/Linux}       {3+ anos} {1.00}
+\cvskill{Git}             {3+ anos} {1.00}
+\cvskill{Shell Scripting} {3+ anos} {1.00}
+\cvskill{Docker/Podman}   {1+ anos} {0.45} \\
+
+\cvskill{System Admin}    {2+ anos} {0.75}
+\cvskill{Automation}      {2+ anos} {0.75}
+\cvskill{Security}        {2+ anos} {0.75}
+\cvskill{Web Performance} {2+ anos} {0.75}
+
+\cvsection{Formação}
+
+\cvmetaevent
+  {2023 - 2027}
+  {Bacharelado em Engenharia de Software}
+  {UniCesumar}
+  {Graduação focada na fundamentação teórica e prática da engenharia de
+  software. O currículo abrange a Engenharia de Requisitos, Arquitetura
+  de Software e Modelagem de Sistemas, integrando conceitos de
+  Cibersegurança e Computação em Nuvem. A formação enfatiza o
+  desenvolvimento de algoritmos, estruturas de dados e Programação
+  Orientada a Objetos, preparando para a gestão de projetos de software
+  e design de soluções escaláveis.}
+
+\cvmetaevent
+  {2023 - 2024}
+  {Técnico em Desenvolvimento de Sistemas}
+  {Senac Minas}
+  {Habilitação técnica focada na implementação prática de sistemas
+  computacionais. O curso abrange o ciclo completo de desenvolvimento
+  para aplicações. A grade curricular prioriza a lógica de programação e
+  codificação, juntamente com a modelagem e administração de Bancos de
+  Dados Relacionais. Enfatiza a aplicação de metodologias ágeis, testes
+  de software e versionamento de código em projetos integradores.}
+
+\end{leftcolumn}
+
+%------------------------------------------------------- Left Column ---
+%--- Right Column ------------------------------------------------------
+
+\begin{rightcolumn}
+
+% Usage: \fcolorbox{frame_color}{bg_color}{content}
+\fcolorbox{white}{black}{%
+  \begin{minipage}[c][3.5cm][c]{\mpwidth}
+    \begin{center}
+      \HUGE{\textbf{\textcolor{white}{%
+        \MakeUppercase{Thiago C. Silva}%
+      }}}\\[-24pt]
+      \textcolor{white}{\rule{0.1\textwidth}{1.25pt}}\\[4pt]
+      \large{\textcolor{white}{Engenheiro de Software}}
+    \end{center}
+  \end{minipage}%
+}\\[14pt]
+\vspace{-12pt}
+
+\cvsection{Perfil Profissional}
+
+\cvtext{%
+  Técnico em Desenvolvimento de Sistemas e graduando em Engenharia
+  de Software com perfil híbrido entre Desenvolvimento e Administração de
+  Sistemas. Adoto uma abordagem de ``Fundamentos'', unindo o rigor da
+  engenharia tradicional à automação moderna para criar softwares seguros
+  e auditáveis.\\[6pt]
+  %
+  Engajado com a filosofia de Software Livre, adoto a transparência e a
+  colaboração como métodos de trabalho. Encaro a documentação técnica e
+  a análise profunda de código-fonte como ferramentas indispensáveis para
+  a garantia de qualidade.%
+}
+
+\cvsection{Experiência Profissional}
+
+\cvevent
+  {2023 - Jul 2025}
+  {Engenheiro de Software \& Infraestrutura Web}
+  {Flow Digital}
+  {Responsável por garantir a disponibilidade e segurança dos serviços,
+  traduzindo requisitos estratégicos de negócio em soluções robustas e
+  de alta performance. Gestão do ciclo de vida de aplicações web, com
+  foco em maximizar métricas de performance e segurança. Atuação na
+  administração de servidores, eliminando gargalos, melhorando a
+  eficiência e desempenho para atender demandas de marketing e SEO
+  técnico.}
+  {\cvlist{
+    \item Otimização de performance (Core Web Vitals)
+    \item Desenvolvimento e manutenção de aplicações web
+    \item Linux \& Shell Scripting para automação
+    \item PHP \& CMS Management
+    \item Administração de servidores web
+    \item Analytics \& SEO Técnico
+    \item Melhoria mensurável em métricas de performance e SEO
+  }}
+
+\vspace{10pt}
+
+\cvevent
+  {Jul 2025 - Atual}
+  {Desenvolvedor de Software \& Consultor Técnico}
+  {Autônomo}
+  {Desenvolvimento de soluções de software completas, com ênfase na
+  qualidade de código, segurança e automação. Atuação consultiva para
+  resolver problemas complexos de integração e infraestrutura para
+  diversos clientes.}
+  {\cvlist{
+    \item Automação de processos e scripts de infraestrutura
+    \item Docker \& Ferramentas de Containerização
+    \item SQL \& Modelagem de Dados Relacional
+    \item Git \& Metodologias Ágeis de entrega
+    \item Soluções focadas em resolver a causa raiz dos problemas de negócio
+  }}
+
+\cvsection{Certificações}
+
+\cvevent
+  {Dezembro 2024}
+  {GitHub Foundations}
+  {GitHub}
+  {Validação oficial de competência em GitHub, cobrindo práticas
+  essenciais de colaboração, gerenciamento de projetos, segurança e
+  fluxo de trabalho Open Source.}
+  {}
+
+\vspace{10pt}
+
+\cvevent
+  {Fevereiro 2024}
+  {Cybersecurity Essentials}
+  {The Linux Foundation}
+  {Certificação focada nos fundamentos de segurança cibernética
+  abrangendo princípios de defesa, criptografia e segurança
+  operacional.}
+  {}
+
+\vspace{10pt}
+
+\cvevent
+  {Jan 2023}
+  {Shell Scripting: Automação de Infraestrutura}
+  {Alura}
+  {Desenvolvimento de scripts para automação de tarefas de sistema,
+  manipulação de streams de dados e administração eficiente de ambientes
+  Linux.}
+  {}
+
+\vspace{10pt}
+
+\cvevent
+  {Jan 2023}
+  {Arquitetura de Computadores: Fundamentos de Hardware}
+  {Alura}
+  {Estudo aprofundado sobre como os programas interagem com o hardware,
+  ciclo de instruções da CPU e hierarquia de memória.}
+  {}
+
+\vspace{10pt}
+
+\cvevent
+  {Out 2022}
+  {Formação C: Programação de Baixo Nível}
+  {Alura}
+  {Manipulação direta de memória, uso de ponteiros e compreensão da base
+  estrutural dos sistemas operacionais modernos.}
+  {}
+
+\vspace{10pt}
+
+\cvevent
+  {Ago 2022}
+  {Formação Java com Orientação a Objetos}
+  {Alura}
+  {Consolidação dos pilares da Orientação a Objetos (Encapsulamento,
+  Herança, Polimorfismo) e aplicação de boas práticas de design de
+  código no ecossistema Java.}
+  {}
+
+\vspace{10pt}
+
+\cvevent
+  {Out 2022}
+  {Linux Onboarding: Operação Eficiente via CLI}
+  {Alura}
+  {Domínio da interface de linha de comando (CLI) para navegação, gestão
+  de processos e permissões em sistemas Unix-like.}
+  {}
+
+\vspace{10pt}
+
+\cvevent
+  {Set 2022}
+  {Desenvolvimento Web com PHP}
+  {Alura}
+  {Manipulação avançada de estruturas de dados (Arrays/Strings) e
+  implementação de lógica backend para aplicações web dinâmicas.}
+  {}
+
+\vspace{10pt}
+
+\cvevent
+  {Ago 2022}
+  {Linguagem Java Avançado: POO}
+  {Fundação Bradesco}
+  {Especialização em Programação Orientada a Objetos, focando em
+  encapsulamento, herança, polimorfismo e tratamento de exceções.}
+  {}
+
+\vspace{10pt}
+
+\cvevent
+  {Dez 2021}
+  {Fundamentos de Marketing Digital e Negócios}
+  {Google}
+  {Visão estratégica sobre métricas de desempenho digital e presença
+  online, complementando o perfil técnico com visão de produto.}
+  {}
+
+\end{rightcolumn}
+
+%------------------------------------------------------ Right Column ---
+\end{paracol}
+\end{document}

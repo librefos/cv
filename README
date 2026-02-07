@@ -1,0 +1,133 @@
+--- Português (pt-BR) --------------------------------------------------
+
+Este repositório contém o código-fonte LaTeX do meu Curriculum Vitae
+profissional. Ele foi projetado para ser modular, automatizado e
+versionado, tratando o documento como um projeto de software em vez de
+um binário estático.
+
+---- Estrutura do Projeto ----------------------------------------------
+
+.
+|-- assets/      # Ativos binários (Foto de perfil)
+|-- build/       # Artefatos gerados (*.pdf, *.log, *.aux)
+|-- .git/        # Metadados do Git
+|-- .gitignore   # Lista de exclusão de artefatos de build
+|-- cv.tex       # Ponto de entrada principal
+|-- preamble.tex # Configuração, Pacotes e Lógica de Design
+|-- toPDF.sh     # Script de automação de build
+|-- LICENSE      # Termos da Licença MIT
+`-- README       # Este arquivo
+
+----------------------------------------------- Estrutura do Projeto ---
+---- Requisitos --------------------------------------------------------
+
+Para compilar este documento, você precisa de uma distribuição TeX Live
+padrão instalada no seu sistema.
+
+Arch Linux: # pacman -S texlive-most texlive-lang
+
+Debian:     # apt install texlive-latex-extra texlive-lang-portuguese \
+                          texlive-fonts-extra
+
+Pacotes Essenciais Utilizados:
+  - paracol      (Layout em colunas)
+  - tikz         (Barras de habilidades e gráficos)
+  - fontawesome5 (Ícones)
+  - raleway      (Tipografia)
+  - babel        (Hifenização em português)
+
+--------------------------------------------------------- Requisitos ---
+---- Instruções de Build -----------------------------------------------
+
+Um script shell é fornecido para automatizar o processo de build e
+manter o diretório raiz limpo, direcionando a saída para a pasta
+'build/'.
+
+1. Torne o script executável:        $ chmod +x toPDF.sh
+2. Compile o documento:              $ ./toPDF.sh cv.tex
+3. O PDF final estará disponível em: build/cv.pdf
+
+------------------------------------------------ Instruções de Build ---
+---- Customização ------------------------------------------------------
+
+- Conteúdo: Edite 'cv.tex' para atualizar experiência e skills.
+- Design:   Edite 'preamble.tex' para mudar cores, fontes ou margens.
+- Assets:   Substitua 'assets/profile.jpeg' pela sua própria imagem.
+
+------------------------------------------------------- Customização ---
+---- Licença -----------------------------------------------------------
+
+Baseado no trabalho original de Jan Kuester (2019).
+Refatorado e mantido por Thiago C. Silva (2026).
+
+Distribuído sob a Licença MIT. Veja LICENSE para detalhes.
+
+------------------------------------------------------------ Licença ---
+
+-------------------------------------------------- Português (pt-BR) ---
+--- English ------------------------------------------------------------
+
+This repository contains the LaTeX source code for my professional
+Curriculum Vitae. It is designed to be modular, automated, and version-
+controlled, treating the document as a software project rather than a
+static binary.
+
+---- Project Structure -------------------------------------------------
+
+.
+|-- assets/      # Binary assets (Profile picture)
+|-- build/       # Generated artifacts (*.pdf, *.log, *.aux)
+|-- .git/        # Git metadata
+|-- .gitignore   # Build artifacts exclusion list
+|-- cv.tex       # Main entry point
+|-- preamble.tex # Configuration, Packages, and Design Logic
+|-- toPDF.sh     # Build automation script
+|-- LICENSE      # MIT License terms
+`-- README       # This file
+
+-------------------------------------------------- Project Structure ---
+---- Requirements ------------------------------------------------------
+
+To compile this document, you need a standard TeX Live distribution
+installed on your system.
+
+Arch Linux: # pacman -S texlive-most texlive-lang
+
+Debian:     # apt install texlive-latex-extra texlive-lang-portuguese \
+                          texlive-fonts-extra
+
+Essential Packages Used:
+  - paracol      (Column layout)
+  - tikz         (Skill bars and graphics)
+  - fontawesome5 (Icons)
+  - raleway      (Typography)
+  - babel        (Portuguese hyphenation)
+
+------------------------------------------------------- Requirements ---
+---- Build Instructions ------------------------------------------------
+
+A shell script is provided to automate the build process and keep the
+root directory clean by directing output to the 'build/' folder.
+
+1. Make the script executable:         $ chmod +x toPDF.sh
+2. Compile the document:               $ ./toPDF.sh cv.tex
+3. The final PDF will be available at: build/cv.pdf
+
+------------------------------------------------- Build Instructions ---
+---- Customization -----------------------------------------------------
+
+- Content: Edit 'cv.tex' to update experience and skills.
+- Design:  Edit 'preamble.tex' to change colors, fonts, or margins.
+- Assets:  Replace 'assets/profile.jpeg' with your own image.
+
+------------------------------------------------------ Customization ---
+---- License -----------------------------------------------------------
+
+Based on the original work by Jan Kuester (2019).
+Refactored and maintained by Thiago C. Silva (2026).
+
+Distributed under the MIT License. See LICENSE for details.
+
+------------------------------------------------------------ License ---
+
+------------------------------------------------------------ English ---
