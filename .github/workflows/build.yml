@@ -1,0 +1,33 @@
+name: Build and Release LaTeX CV
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v4
+        with:
+          root_file: cv.tex
+          args: |
+            -pdf
+            -file-line-error
+            -halt-on-error
+            -interaction=nonstopmode
+            -output-directory=build
+            -jobname=cv-${{ github.ref_name }}
+
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: "CV Release ${{ github.ref_name }}"
+          body: "Auto-generated PDF for version ${{ github.ref_name }}"
+          files: build/cv-${{ github.ref_name }}.pdf
+          make_latest: true
