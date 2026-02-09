@@ -21,13 +21,14 @@ jobs:
             -file-line-error
             -halt-on-error
             -interaction=nonstopmode
-            -output-directory=build
-            -jobname=cv-${{ github.ref_name }}
+
+      - name: Rename PDF
+        run: mv cv.pdf cv-${{ github.ref_name }}.pdf
 
       - name: Release
         uses: softprops/action-gh-release@v2
         with:
           name: "CV Release ${{ github.ref_name }}"
           body: "Auto-generated PDF for version ${{ github.ref_name }}"
-          files: build/cv-${{ github.ref_name }}.pdf
+          files: cv-${{ github.ref_name }}.pdf
           make_latest: true
