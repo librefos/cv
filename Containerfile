@@ -1,6 +1,8 @@
 FROM debian:bookworm-slim
 
 LABEL description="Lightweight TexLive environment for PDF compilation"
+LABEL maintainer="librefos"
+LABEL org.opencontainers.image.source="https://github.com/librefos/cv"
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     texlive-latex-base                                           \
