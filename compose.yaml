@@ -1,0 +1,9 @@
+services:
+  texlive:
+    build:
+      context: .
+      dockerfile: Containerfile
+    image: texlive-cv:latest
+    volumes:
+      - .:/workspace
+    working_dir: /workspace

@@ -48,6 +48,31 @@ manter o diretório raiz limpo, direcionando a saída para a pasta
 3. O PDF final estará disponível em: build/cv.pdf
 
 ------------------------------------------------ Instruções de Build ---
+---- Container (Docker/Podman) ---------------------------------------
+
+Caso prefira não instalar o TeX Live localmente, um Containerfile é
+fornecido para compilar o documento em um ambiente isolado.
+
+Requisito: Docker ou Podman com suporte a Compose.
+
+1. Construa a imagem (apenas na primeira vez):
+
+   $ docker compose build
+
+2. Compile o documento:
+
+   $ docker compose run --rm texlive
+
+3. O PDF final estará disponível em: build/cv-<tag>.pdf
+
+O nome do arquivo reflete a tag Git atual do repositório. Caso não
+haja uma tag no commit atual, o nome será 'cv-dev.pdf'.
+
+Nota: O diretório do projeto inteiro é montado em '/workspace' dentro
+do container, incluindo '.git/', o que permite que a tag seja
+detectada corretamente.
+
+--------------------------------------- Container (Docker/Podman) ---
 ---- Customização ------------------------------------------------------
 
 - Conteúdo: Edite 'cv.tex' para atualizar experiência e skills.
@@ -114,6 +139,31 @@ root directory clean by directing output to the 'build/' folder.
 3. The final PDF will be available at: build/cv.pdf
 
 ------------------------------------------------- Build Instructions ---
+---- Container (Docker/Podman) ---------------------------------------
+
+If you prefer not to install TeX Live locally, a Containerfile is
+provided to compile the document in an isolated environment.
+
+Requirement: Docker or Podman with Compose support.
+
+1. Build the image (first time only):
+
+   $ docker compose build
+
+2. Compile the document:
+
+   $ docker compose run --rm texlive
+
+3. The final PDF will be available at: build/cv-<tag>.pdf
+
+The filename reflects the current Git tag of the repository. If there
+is no tag on the current commit, the output will be 'cv-dev.pdf'.
+
+Note: The entire project directory is mounted at '/workspace' inside
+the container, including '.git/', allowing the tag to be detected
+correctly.
+
+--------------------------------------- Container (Docker/Podman) ---
 ---- Customization -----------------------------------------------------
 
 - Content: Edit 'cv.tex' to update experience and skills.
