@@ -73,6 +73,35 @@ do container, incluindo '.git/', o que permite que a tag seja
 detectada corretamente.
 
 --------------------------------------- Container (Docker/Podman) ---
+---- Integração Contínua (CI/CD) -------------------------------------
+
+O repositório utiliza dois workflows do GitHub Actions localizados em
+'.github/workflows/':
+
+  publish-image.yml — Publicação da Imagem de Container
+  Disparado quando há alterações no Containerfile (apenas na branch
+  master). Constrói a imagem TeX Live e a publica no GitHub Container
+  Registry (GHCR) em ghcr.io/librefos/texlive-cv:latest. Isso garante
+  que a imagem usada pelo CI esteja sempre atualizada sem precisar ser
+  reconstruída a cada compilação.
+
+  build.yml — Compilação e Release
+  Disparado ao criar uma tag Git. Realiza o checkout completo do
+  repositório (incluindo histórico de tags), puxa a imagem publicada
+  no GHCR e executa toPDF.sh dentro do container. O PDF gerado é
+  nomeado automaticamente com a tag atual (ex: cv-2026-03.pdf) e
+  publicado como artefato na página de Releases do repositório.
+
+Fluxo completo:
+
+  1. Alterações no código  →  commit  →  push para master
+  2. Versão pronta         →  git tag -s <tag>  →  git push origin <tag>
+  3. GitHub Actions compila e publica o PDF em Releases automaticamente
+
+A imagem de container é pública e está disponível em:
+ghcr.io/librefos/texlive-cv:latest
+
+------------------------------------- Integração Contínua (CI/CD) ---
 ---- Customização ------------------------------------------------------
 
 - Conteúdo: Edite 'cv.tex' para atualizar experiência e skills.
@@ -164,6 +193,35 @@ the container, including '.git/', allowing the tag to be detected
 correctly.
 
 --------------------------------------- Container (Docker/Podman) ---
+---- Continuous Integration (CI/CD) ----------------------------------
+
+The repository uses two GitHub Actions workflows located in
+'.github/workflows/':
+
+  publish-image.yml — Container Image Publishing
+  Triggered when the Containerfile changes on the master branch.
+  Builds the TeX Live image and publishes it to the GitHub Container
+  Registry (GHCR) at ghcr.io/librefos/texlive-cv:latest. This ensures
+  the image used by CI is always up to date without being rebuilt on
+  every compilation run.
+
+  build.yml — Compilation and Release
+  Triggered when a Git tag is pushed. Performs a full checkout of the
+  repository (including tag history), pulls the published image from
+  GHCR, and runs toPDF.sh inside the container. The generated PDF is
+  automatically named after the current tag (e.g. cv-2026-03.pdf) and
+  published as an artifact on the repository's Releases page.
+
+Full workflow:
+
+  1. Code changes  →  commit  →  push to master
+  2. Version ready →  git tag -s <tag>  →  git push origin <tag>
+  3. GitHub Actions compiles and publishes the PDF to Releases
+
+The container image is public and available at:
+ghcr.io/librefos/texlive-cv:latest
+
+---------------------------------- Continuous Integration (CI/CD) ---
 ---- Customization -----------------------------------------------------
 
 - Content: Edit 'cv.tex' to update experience and skills.
