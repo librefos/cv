@@ -1,27 +1,38 @@
 name: Build and Release LaTeX CV
+
 on:
   push:
     tags:
       - '*'
+
 jobs:
   build_latex:
     runs-on: ubuntu-latest
+
     permissions:
       contents: write
+
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Build image
-        run: docker compose build
+        uses: actions/checkout@v6
 
       - name: Compile LaTeX document
-        run: docker compose run --rm texlive
+        uses: xu-cheng/latex-action@v4
+        with:
+          root_file: cv.tex
+          args: |
+            -pdf
+            -file-line-error
+            -halt-on-error
+            -interaction=nonstopmode
+
+      - name: Rename PDF
+        run: mv cv.pdf cv-${{ github.ref_name }}.pdf
 
       - name: Release
         uses: softprops/action-gh-release@v2
         with:
           name: "CV Release ${{ github.ref_name }}"
           body: "Auto-generated PDF for version ${{ github.ref_name }}"
-          files: build/cv-${{ github.ref_name }}.pdf
+          files: cv-${{ github.ref_name }}.pdf
           make_latest: true
