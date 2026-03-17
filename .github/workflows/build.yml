@@ -21,7 +21,8 @@ jobs:
       - name: Compile LaTeX document
         run: |
           docker run --rm -v ${{ github.workspace }}:/workspace \
-            ghcr.io/${{ github.repository_owner }}/texlive-cv:latest
+            ghcr.io/${{ github.repository_owner }}/texlive-cv:latest bash -c \
+            "git config --global --add safe.directory /workspace && bash toPDF.sh cv.tex"
 
       - name: Release
         uses: softprops/action-gh-release@v2
